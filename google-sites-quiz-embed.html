@@ -1,0 +1,61 @@
+<!-- SCI-NOVE: Google Sites > Insert > Embed > Embed code. Paste this entire snippet. -->
+<div id="scinove-check-widget" style="width:100%;max-width:850px;margin:0 auto">
+  <div class="snw-banner"><span class="snw-caption">SCI-NOVE · SCIENCE STARTS HERE</span><h2>Science Evidence Challenge</h2><p>Five evidence-based practice questions for Grade 11 General Science</p></div>
+  <form class="snw-form" novalidate><div class="snw-questions"></div><button type="submit" class="snw-submit">Check my answers →</button><button type="button" class="snw-retry" hidden>Try again</button><div class="snw-result" role="status" aria-live="polite"></div></form>
+  <p class="snw-disclaimer">This practice exercise does not collect names, save scores, or submit responses to a teacher. For graded assessments, use a school-approved Google Form.</p>
+</div>
+<style>
+  #scinove-check-widget{font-family:Arial,"Segoe UI",sans-serif;color:#173434;font-size:15px;line-height:1.55;background:#fffefa;border:1px solid #d8e7dd;border-radius:20px;overflow:hidden;box-sizing:border-box}
+  #scinove-check-widget *{box-sizing:border-box}
+  #scinove-check-widget .snw-banner{background:#0b3435;color:white;padding:27px 25px}
+  #scinove-check-widget .snw-caption{font-weight:800;letter-spacing:1.7px;font-size:11px;color:#e6bf75}
+  #scinove-check-widget h2{font-size:28px;margin:8px 0 6px;line-height:1.2}
+  #scinove-check-widget .snw-banner p{color:#c0dfd3;margin:0;font-size:13px}
+  #scinove-check-widget .snw-form{padding:14px 25px 25px}
+  #scinove-check-widget fieldset{border:0;padding:18px 0 21px;border-bottom:1px solid #dce8de;margin:0}
+  #scinove-check-widget legend{font-weight:800;font-size:15px;padding:0 0 9px;line-height:1.5}
+  #scinove-check-widget .snw-context{background:#f0f5f0;color:#566e63;border-radius:9px;padding:10px 12px;font-size:12px;margin:4px 0 10px}
+  #scinove-check-widget label{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid #e1e8e2;margin:7px 0;border-radius:9px;cursor:pointer;font-size:13px}
+  #scinove-check-widget label:has(input:checked){background:#e9f5ee;border-color:#8dc6af}
+  #scinove-check-widget input{accent-color:#13795e;margin-top:3px}
+  #scinove-check-widget label.snw-correct{background:#e2f6eb;border-color:#7cbca0}
+  #scinove-check-widget label.snw-wrong{background:#fff0e8;border-color:#dfab9a}
+  #scinove-check-widget .snw-explain{display:none;background:#e8f4eb;color:#3a6b58;padding:10px;border-radius:9px;font-size:12px}
+  #scinove-check-widget .snw-explain.on{display:block}
+  #scinove-check-widget .snw-submit,#scinove-check-widget .snw-retry{background:#0e755c;color:white;font-weight:800;font-size:14px;border:0;padding:12px 18px;border-radius:9px;margin-top:18px;cursor:pointer}
+  #scinove-check-widget .snw-retry{background:#0b3435;margin-left:9px}
+  #scinove-check-widget button[hidden]{display:none}
+  #scinove-check-widget .snw-result{margin-top:15px;font-weight:750;color:#14664f}
+  #scinove-check-widget .snw-disclaimer{color:#687e75;background:#eff5ef;margin:0;padding:14px 25px;font-size:11px;line-height:1.6}
+  @media(max-width:520px){#scinove-check-widget .snw-banner,#scinove-check-widget .snw-form{padding-left:15px;padding-right:15px}#scinove-check-widget h2{font-size:23px}}
+</style>
+<script>
+(()=>{
+  'use strict';
+  const root=document.getElementById('scinove-check-widget');
+  if(!root || root.dataset.ready==='true')return;
+  root.dataset.ready='true';
+  const ITEMS = [
+      {context:'A class records one unusually hot afternoon at school.',question:'What is the strongest next step before making a claim about climate change?',options:['Use the afternoon as proof of a climate trend.','Compare reliable temperature records over several decades.','Ask only one classmate whether they feel warmer.','Assume the school has the same climate as every city.'],answer:1,why:'Long-term climate claims require sustained, reliable records; one hot afternoon describes weather.'},
+      {context:'Students see bubbles in a teacher-supervised vinegar and baking soda demonstration.',question:'Which explanation best connects the observation to scientific evidence?',options:['All visible bubbles in any substance indicate boiling.','The reaction has created energy from nothing.','A liquid changing shape always produces a new gas.','An acid–carbonate reaction can release carbon dioxide gas.'],answer:3,why:'Vinegar reacts with a carbonate in baking soda, producing carbon dioxide among the products.'},
+      {context:'A group studies photographs of coastal mangroves and asks how habitat change affects fish.',question:'Which investigation plan is most scientifically useful?',options:['Compare credible habitat information and look for evidence of changes in shelter and food.','Count the number of clouds in just one photo and infer fish population changes.','Choose the most colorful photo and assume it represents the healthiest ecosystem.','Conclude fish numbers are falling without collecting any evidence.'],answer:0,why:'Connecting habitat, food, and shelter through verified evidence produces a testable ecological explanation.'},
+      {context:'Two supervised surface measurements show a shaded area cooler than a nearby sunlit area on one day.',question:'What is the most appropriate conclusion?',options:['Every shaded place in Cavite is cooler by exactly the same amount.','The two readings are sufficient to show a worldwide climate trend.','The results suggest a local difference that should be checked through repeated measurements.','Surface temperatures cannot be compared using recorded measurements.'],answer:2,why:'The observation supports a limited local comparison, not a universal or long-term climate claim.'},
+      {context:'A social media post says a single heavy rainfall event proves climate change in Noveleta.',question:'How should a science learner evaluate this statement?',options:['Accept the post if many people have shared it.','Treat the event as weather and investigate long-term rainfall data before claiming a trend.','Reject all rainfall data because climate is impossible to measure.','Use the post as proof because rainfall affects many households.'],answer:1,why:'An individual weather event can motivate a question but long-term records are needed to assess climate trends.'}
+    ];
+  const form=root.querySelector('.snw-form'),body=root.querySelector('.snw-questions'),result=root.querySelector('.snw-result');
+  function render(){body.innerHTML=ITEMS.map((q,i)=>`<fieldset><legend>Question ${i+1}. ${q.question}</legend><div class="snw-context">${q.context}</div>${q.options.map((s,j)=>`<label><input type="radio" name="snw-q${i}" value="${j}"><span><strong>${'ABCD'[j]}.</strong> ${s}</span></label>`).join('')}<div class="snw-explain" data-explain="${i}"></div></fieldset>`).join('');}
+  render();
+  form.addEventListener('submit',event=>{
+    event.preventDefault();
+    const selections=ITEMS.map((q,i)=>form.querySelector(`input[name="snw-q${i}"]:checked`));
+    if(selections.some(x=>!x)){result.textContent='Please choose one answer for every question.';return;}
+    let score=0;
+    ITEMS.forEach((q,i)=>{const chosen=Number(selections[i].value);if(chosen===q.answer)score++;const field=selections[i].closest('fieldset');field.querySelectorAll('label').forEach((l,j)=>{if(j===q.answer)l.classList.add('snw-correct');if(j===chosen&&chosen!==q.answer)l.classList.add('snw-wrong');});const explain=field.querySelector('.snw-explain');explain.textContent=`${chosen===q.answer?'Correct. ':'Review: '}${q.why}`;explain.classList.add('on');});
+    result.textContent=`You scored ${score} out of ${ITEMS.length}. Review the explanations above to improve your reasoning.`;
+    form.querySelector('.snw-submit').disabled=true;
+    form.querySelector('.snw-retry').hidden=false;
+    form.querySelectorAll('input').forEach(x=>x.disabled=true);
+  });
+  form.querySelector('.snw-retry').addEventListener('click',()=>{render();result.textContent='';form.querySelector('.snw-submit').disabled=false;form.querySelector('.snw-retry').hidden=true;});
+})();
+</script>
